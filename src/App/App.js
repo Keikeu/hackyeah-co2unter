@@ -109,7 +109,8 @@ function Home() {
         <CircleRenderer circles={absorptions} setCircles={setAbsorptions} maxValue={180000} />
 
         <SectionHeader>But how much is absorbed?</SectionHeader>
-        <CircleRenderer circles={emissionsVsAbsorption} maxValue={3000000} />
+        <CircleRenderer circles={emissionsVsAbsorption} maxValue={4000000} />
+
         <Typography variant="paragraph" marginTop={24} marginBottom={72}>
           That small green dot represents the estimated CO2 absorption. It’s clear the city’s absorption is far from
           offsetting its emissions.
@@ -120,7 +121,7 @@ function Home() {
         <Typography variant="h3" marginTop={56}>
           Summary
         </Typography>
-        <Typography variant="paragraph" marginY={24}>
+        <Typography variant="paragraph" marginTop={24} marginBottom={56}>
           This page underscores the urgent need to reduce Kraków’s CO2 emissions, with a particular focus on the energy
           sector. While green spaces and tree planting play a role in absorbing emissions, the real solution lies in
           significantly limiting emissions at the source. Shifting toward green energy is crucial to making the biggest

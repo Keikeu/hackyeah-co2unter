@@ -13,7 +13,7 @@ const Table = styled.table`
 
   th,
   td {
-    min-width: 140px;
+    min-width: 130px;
   }
 
   td {
