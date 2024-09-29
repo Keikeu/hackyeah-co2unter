@@ -84,8 +84,9 @@ const CircleRenderer = ({ circles: initCircles, setCircles: setInitCircles, maxV
       // Create circles at different positions
       const circles = [];
       for (let i = 0; i < initCircles.length; i++) {
-        const x = Common.random(0, screenWidth);
-        const y = Common.random(0, screenHeight);
+        const x = Math.floor(Math.random() * screenWidth) + 1;
+        const y = Math.floor(Math.random() * screenHeight) + 1;
+
         const circle = Bodies.circle(
           x,
           y,
