@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/hackyeah-co2unter/static/css/main.3463fc96.css",
-    "main.js": "/hackyeah-co2unter/static/js/main.02d7c3ad.js",
+    "main.js": "/hackyeah-co2unter/static/js/main.e6c43c4e.js",
     "static/media/city2.png": "/hackyeah-co2unter/static/media/city2.966d29c07f101c13717b.png",
     "static/media/city.png": "/hackyeah-co2unter/static/media/city.f354bed6b0dc7dc35e3a.png",
     "static/media/logo.svg": "/hackyeah-co2unter/static/media/logo.0e84e66d61f68e6cf13787bee4121551.svg",
     "index.html": "/hackyeah-co2unter/index.html",
     "main.3463fc96.css.map": "/hackyeah-co2unter/static/css/main.3463fc96.css.map",
-    "main.02d7c3ad.js.map": "/hackyeah-co2unter/static/js/main.02d7c3ad.js.map"
+    "main.e6c43c4e.js.map": "/hackyeah-co2unter/static/js/main.e6c43c4e.js.map"
   },
   "entrypoints": [
     "static/css/main.3463fc96.css",
-    "static/js/main.02d7c3ad.js"
+    "static/js/main.e6c43c4e.js"
   ]
 }
