@@ -1,4 +1,28 @@
 export const absorptions = {
+  street_trees: {
+    min: 0,
+    max: 10000,
+    step: 50,
+    unit: "trees",
+    average: 2000,
+    factor: 18,
+  },
+  grasslands: {
+    min: 0,
+    max: 100,
+    step: 1,
+    unit: "hectares",
+    average: 30,
+    factor: 1600,
+  },
+  wetlands: {
+    min: 0,
+    max: 60,
+    step: 1,
+    unit: "hectares",
+    average: 10,
+    factor: 2400,
+  },
   urban_trees: {
     min: 0,
     max: 4000,
@@ -15,14 +39,6 @@ export const absorptions = {
     average: 50,
     factor: 68,
   },
-  wetlands: {
-    min: 0,
-    max: 60,
-    step: 1,
-    unit: "hectares",
-    average: 10,
-    factor: 2400,
-  },
   urban_gardens: {
     min: 0,
     max: 4000,
@@ -30,22 +46,6 @@ export const absorptions = {
     unit: "m²",
     average: 1000,
     factor: 0.17,
-  },
-  grasslands: {
-    min: 0,
-    max: 100,
-    step: 1,
-    unit: "hectares",
-    average: 30,
-    factor: 1600,
-  },
-  street_trees: {
-    min: 0,
-    max: 10000,
-    step: 50,
-    unit: "trees",
-    average: 2000,
-    factor: 18,
   },
 };
 

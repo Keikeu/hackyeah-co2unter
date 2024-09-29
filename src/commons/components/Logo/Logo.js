@@ -1,10 +1,9 @@
 import React from "react";
 import T from "prop-types";
 import styled from "styled-components/macro";
-import { Link } from "react-router-dom";
 import LogoSVG from "commons/images/logo.svg";
 
-const LogoLink = styled(Link)`
+const LogoLink = styled.div`
   position: fixed;
   padding: 16px 24px;
   width: 100%;
@@ -12,9 +11,9 @@ const LogoLink = styled(Link)`
   z-index: var(--z-index-above);
 `;
 
-function Logo({ className, link }) {
+function Logo({ className }) {
   return (
-    <LogoLink className={className} to={link}>
+    <LogoLink className={className}>
       <img src={LogoSVG} alt="AirAware logo" width={96} />
     </LogoLink>
   );
@@ -22,7 +21,6 @@ function Logo({ className, link }) {
 
 Logo.propTypes = {
   className: T.string,
-  link: T.string,
 };
 
 export default Logo;

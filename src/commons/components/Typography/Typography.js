@@ -83,7 +83,7 @@ const StyledComponent = styled.div`
     variant === "paragraph" &&
     css`
       font-size: 16px;
-      line-height: 26px;
+      line-height: 28px;
     `};
 
   ${({ variant }) =>

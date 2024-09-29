@@ -12,8 +12,6 @@ const CircleRenderer = ({ circles: initCircles, setCircles: setInitCircles, maxV
   const engineRef = useRef(null);
   const circleRefs = useRef([]);
 
-  console.log(initCircles);
-
   const wallThickness = 100;
 
   useEffect(() => {
@@ -32,10 +30,10 @@ const CircleRenderer = ({ circles: initCircles, setCircles: setInitCircles, maxV
         Common = Matter.Common;
 
       const engine = Engine.create();
-      engine.world.gravity.x = 0; // Disable horizontal gravity
-      engine.world.gravity.y = 0.1; // Disable vertical gravity
+      engine.world.gravity.x = 0;
+      engine.world.gravity.y = 0;
       const world = engine.world;
-      engineRef.current = engine; // Save the engine reference
+      engineRef.current = engine;
 
       const render = Render.create({
         element: containerRef.current,
@@ -86,26 +84,26 @@ const CircleRenderer = ({ circles: initCircles, setCircles: setInitCircles, maxV
       // Create circles at different positions
       const circles = [];
       for (let i = 0; i < initCircles.length; i++) {
-        const x = Common.random(0, screenWidth); // Spacing circles horizontally
+        const x = Common.random(0, screenWidth);
         const y = Common.random(0, screenHeight);
         const circle = Bodies.circle(
           x,
           y,
           normalizeEmissions(initCircles[i].value * initCircles[i].factor, 0, maxValue),
           {
-            friction: 0.001, // Lower the friction to make it slide easily on surfaces
-            frictionAir: 0.001, // Lower air resistance to make it move more freely in the air
-            restitution: 0.1, // Optional: add bounciness if desired
+            friction: 0.001,
+            frictionAir: 0.001,
+            restitution: 0.1,
             render: {
               fillStyle: initCircles[i].color,
             },
           }
         );
         circles.push(circle);
-        circleRefs.current.push(circle); // Store the circle reference
+        circleRefs.current.push(circle);
       }
 
-      Composite.add(world, circles); // Add all circles to the world
+      Composite.add(world, circles);
 
       // Mouse control for dragging
       const mouse = Mouse.create(render.canvas);
@@ -151,36 +149,37 @@ const CircleRenderer = ({ circles: initCircles, setCircles: setInitCircles, maxV
     <div style={{ position: "relative" }}>
       <div ref={containerRef} style={{ borderRadius: "var(--border-radius-2)", overflow: "hidden" }}></div>
 
-      {/* Sliders for each circle */}
-      <div style={{ marginTop: "20px" }}>
-        {initCircles.map((circle, index) => (
-          <Fragment key={index}>
-            <Typography variant="h4" marginTop={8}>
-              {circle.label}:
-            </Typography>
-            <Flexbox alignItems="center">
-              <Slider
-                color={circle.color}
-                min={circle.min}
-                max={circle.max}
-                step={circle.step}
-                marks={[{ value: circle.average || 0, label: "AVG" }]}
-                valueLabelDisplay="auto"
-                value={circle.value}
-                onChange={e => handleSliderChange(index, parseInt(e.target.value))}
-                style={{ width: "50%", flexShrink: 0 }}
-              />
-              <Typography variant="label" marginLeft={24} style={{ flexBasis: "25%" }}>
-                {circle.value} {circle.unit}
+      {setInitCircles && (
+        <div style={{ marginTop: "20px" }}>
+          {initCircles.map((circle, index) => (
+            <Fragment key={index}>
+              <Typography variant="h4" marginTop={8}>
+                {circle.label}:
               </Typography>
-              <Typography variant="label" marginLeft={24} style={{ flexBasis: "25%" }}>
-                {formatCO2(circle.value * circle.factor)}
-              </Typography>
-            </Flexbox>
-            <Divider />
-          </Fragment>
-        ))}
-      </div>
+              <Flexbox alignItems="center">
+                <Slider
+                  color={circle.color}
+                  min={circle.min}
+                  max={circle.max}
+                  step={circle.step}
+                  marks={[{ value: circle.average || 0, label: "AVG" }]}
+                  valueLabelDisplay="auto"
+                  value={circle.value}
+                  onChange={e => handleSliderChange(index, parseInt(e.target.value))}
+                  style={{ width: "50%", flexShrink: 0 }}
+                />
+                <Typography variant="label" marginLeft={24} style={{ flexBasis: "25%" }}>
+                  {circle.value} {circle.unit}
+                </Typography>
+                <Typography variant="label" marginLeft={24} style={{ flexBasis: "25%" }}>
+                  {formatCO2(circle.value * circle.factor)}
+                </Typography>
+              </Flexbox>
+              <Divider />
+            </Fragment>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

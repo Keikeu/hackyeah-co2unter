@@ -26,21 +26,13 @@ export const emissions = {
     average: 150,
     factor: 0.192 * 52 * cityPopulation,
   },
-  public_transport_usage: {
+  waste_generation: {
     min: 0,
-    max: 14,
-    step: 1,
-    unit: "days per week",
-    average: 5,
-    factor: 0.065 * 52 * cityPopulation,
-  },
-  flights_per_year: {
-    min: 0,
-    max: 24,
-    step: 1,
-    unit: "flights per year",
-    average: 2,
-    factor: 250 * cityPopulation,
+    max: 100,
+    step: 5,
+    unit: "kg per month",
+    average: 40,
+    factor: 1.8 * 12 * cityPopulation,
   },
   home_heating: {
     min: 0,
@@ -50,13 +42,21 @@ export const emissions = {
     average: 3000,
     factor: 0.225 * cityPopulation,
   },
-  waste_generation: {
+  meat_consumption: {
     min: 0,
-    max: 100,
-    step: 5,
-    unit: "kg per month",
-    average: 40,
-    factor: 1.8 * 12 * cityPopulation,
+    max: 7,
+    step: 1,
+    unit: "days per week",
+    average: 5,
+    factor: ((16 * 52) / 7) * cityPopulation,
+  },
+  flights_per_year: {
+    min: 0,
+    max: 24,
+    step: 1,
+    unit: "flights per year",
+    average: 2,
+    factor: 250 * cityPopulation,
   },
   shopping_clothes: {
     min: 0,
@@ -66,6 +66,14 @@ export const emissions = {
     average: 20,
     factor: 15 * cityPopulation,
   },
+  public_transport_usage: {
+    min: 0,
+    max: 14,
+    step: 1,
+    unit: "days per week",
+    average: 5,
+    factor: 0.065 * 52 * cityPopulation,
+  },
   water_usage: {
     min: 40,
     max: 200,
@@ -73,22 +81,6 @@ export const emissions = {
     unit: "liters per day",
     average: 150,
     factor: 0.00035 * 365 * cityPopulation,
-  },
-  meat_consumption: {
-    min: 0,
-    max: 7,
-    step: 1,
-    unit: "days per week",
-    average: 5,
-    factor: ((16 * 52) / 7) * cityPopulation,
-  },
-  plant_based_meals: {
-    min: 0,
-    max: 7,
-    step: 1,
-    unit: "days per week",
-    average: 2,
-    factor: ((4 * 52) / 7) * cityPopulation,
   },
 };
 
@@ -103,7 +95,6 @@ export const EMISSION_LABELS = {
   shopping_clothes: "Shopping Clothes",
   water_usage: "Water Usage",
   meat_consumption: "Meat Consumption",
-  plant_based_meals: "Plant-based Meals",
 };
 
 export const EMISSION_COLORS = {
@@ -117,5 +108,4 @@ export const EMISSION_COLORS = {
   shopping_clothes: "#9575cd",
   water_usage: "#64b5f6",
   meat_consumption: "#e57373",
-  plant_based_meals: "#aed581",
 };

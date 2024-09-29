@@ -20,7 +20,6 @@ const StyledMUISlider = styled(MUISlider)`
     background-color: ${({ color }) => color};
   }
   & .MuiSlider-markLabel {
-    top: 26px;
     font-size: 12px;
   }
   & .MuiSlider-thumb {
