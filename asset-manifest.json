@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/airaware/static/css/main.3463fc96.css",
-    "main.js": "/airaware/static/js/main.629dae93.js",
-    "static/media/logo.svg": "/airaware/static/media/logo.0e84e66d61f68e6cf13787bee4121551.svg",
-    "index.html": "/airaware/index.html",
-    "main.3463fc96.css.map": "/airaware/static/css/main.3463fc96.css.map",
-    "main.629dae93.js.map": "/airaware/static/js/main.629dae93.js.map"
+    "main.css": "/hackyeah-co2unter/static/css/main.3463fc96.css",
+    "main.js": "/hackyeah-co2unter/static/js/main.d006e097.js",
+    "static/media/logo.svg": "/hackyeah-co2unter/static/media/logo.0e84e66d61f68e6cf13787bee4121551.svg",
+    "index.html": "/hackyeah-co2unter/index.html",
+    "main.3463fc96.css.map": "/hackyeah-co2unter/static/css/main.3463fc96.css.map",
+    "main.d006e097.js.map": "/hackyeah-co2unter/static/js/main.d006e097.js.map"
   },
   "entrypoints": [
     "static/css/main.3463fc96.css",
-    "static/js/main.629dae93.js"
+    "static/js/main.d006e097.js"
   ]
 }
