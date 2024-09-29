@@ -22,8 +22,8 @@ function Counter() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setValue(val => Math.round(val + 187.1));
-    }, 1000);
+      setValue(val => Math.round(val + 18.71));
+    }, 100);
 
     return () => {
       clearInterval(interval);
