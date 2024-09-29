@@ -11,15 +11,16 @@ const PieChart = () => {
       type: "pie",
       backgroundColor: "transparent",
     },
-    tooltip: {
-      valueSuffix: "%",
-    },
     title: {
       text: "",
     },
+    tooltip: {
+      headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+      pointFormat: '<span style="color:{point.color}">{point.name}</span>: ' + "<b>{point.y:.2f}%</b> of total<br/>",
+    },
     series: [
       {
-        name: "Percentage",
+        name: "Emission Sources",
         colorByPoint: true,
         data: [
           {
@@ -49,7 +50,7 @@ const PieChart = () => {
       series: [
         {
           id: "energy",
-          name: "Percentage",
+          name: "Energy",
           data: [
             ["Energy in industry", 24.2],
             ["Energy in buildings (elec and heat)", 17.5],
@@ -61,7 +62,7 @@ const PieChart = () => {
         },
         {
           id: "industry",
-          name: "Percentage",
+          name: "Industry",
           data: [
             ["Cement", 3],
             ["Chemical & petrochemical (industrial)", 2.2],
@@ -69,7 +70,7 @@ const PieChart = () => {
         },
         {
           id: "waste",
-          name: "Percentage",
+          name: "Waste",
           data: [
             ["Landfills", 1.9],
             ["Wastewater", 1.3],
@@ -77,7 +78,7 @@ const PieChart = () => {
         },
         {
           id: "agriculture",
-          name: "Percentage",
+          name: "Agriculture, Forestry & Land Use",
           data: [
             ["Livestock & Manure", 5.8],
             ["Agricultural Soils", 4.1],
